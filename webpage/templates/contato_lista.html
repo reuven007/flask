@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        {% include "nav.html" %}
+
+        <h2>Lista de Contatos</h2>
+
+        <form method= "get" class='row'>
+            <div class='col-9'>
+                <input type='text' name='pesquisar'class='form-control'>
+            </div>
+                <div class='col-3'>
+                    <button type='Submit' class='btn btn-primary'>pesquisar</button>
+                </div>
+
+        </form>
+
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">Tabela de Respostas</h3>
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Respondido</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for contato in context['dados']%}
+                        <tr>
+                            <td>{{ contato.nome }}</td>
+                            <td>{{ contato.email }}</td>
+                            <td>
+                                {% if contato.respondido == 0 %}
+                                    Não
+                                {% else %}
+                                    Sim
+                                {% endif %}
+                            </td>
+                            <td><a href="{{url_for('contatoDetail', id=contato.id)}}"> Link</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+{% endblock %}

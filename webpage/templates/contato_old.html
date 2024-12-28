@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <body>
+        <div class="container">
+            <div class="row mt-4">
+                <h3> Pesquise seu nome  </h3>   
+            </div>
+            <form action="" method="get" class="row mt-4">
+                <div class="col-9">
+                    Digite para Pesquisar!
+                    <input type="text" name="pesquisar" class="form-control">
+                </div>
+                
+                <div class="col-12">
+                    <button type="submit" class="button">Pesquisar</button>
+                </div>
+            </form>
+
+            <hr>    
+
+            <div class="row mt-4">
+                <h3> Preencha abaixo o formulário </h3>
+                <form action="" method="POST" class="row mt-4">
+                    <div class="col-6">
+                        Nome Completo
+                        <input type="text" name="nome" class="form-control required">
+                    </div>
+            
+                    <div class="col-6">
+                        Email
+                        <input type="text" name="email" class="form-control">
+                    </div>
+            
+                    <div class="col-12">
+                        Mensagem
+                        <input type="text" name="mensagem" class="form-control">
+                    </div>
+            
+                    <div class="col-12">
+                        <!-- Aplicando a classe 'button' ao botão -->
+                        <button type="submit" class="button">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            
+            
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+
+{% endblock %}

@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário para cadastro de Clientes</title>
-</head>
-<body>
-    <div>
-        <h3>Flask</h3>
-        <h5>@reuvenMM</h5>
-        <p>Bem vindos, cadastre-se com segurança</p>
-        <p>Alteração da Atualização</p>
-    </div>    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "nav.html" %}
+
+<div>
+    <h3>Bem vindos!</h3>
+    <h5>@reuvenMM</h5>
+    <p>Bem-vindo "{{ context.usuario }}", cadastre-se com segurança!!!</p>
+
+    <img src = "{{url_for('static', filename='img/Rmm Logo.jpg')}}"> </img>
+</div>
+
+{% endblock %}

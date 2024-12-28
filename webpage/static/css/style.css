@@ -1,0 +1,42 @@
+/* Estilos para o botão */
+.button {
+  background-color: #1b3ba5;
+  /* Cor de fundo verde */
+  color: rgb(255, 255, 255);
+  /* Cor do texto */
+  padding: 15px 32px;
+  /* Espaçamento interno */
+  text-align: center;
+  /* Alinhamento do texto */
+  text-decoration: none;
+  /* Remove o sublinhado */
+  display: inline-block;
+  /* Comportamento de link */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  border: none;
+  /* Sem borda */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  cursor: pointer;
+  /* Cursor tipo ponteiro */
+  animation: bounce 3s infinite;
+  /* Animação */
+  transition: background-color 2s ease, transform 3s ease; /* Transição de 3 segundos */
+
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.button:hover {
+  background-color: #9dc4e7;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container .btn {
+  margin: 0 10px; 
+}
