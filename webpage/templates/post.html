@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+            {% include "nav.html" %}
+        <div class= "col-12">
+                <h3>Post</h3>
+        </div>
+        <hr>
+        <div class="row">
+            <div class= "col-12">
+                <h5> Mensagem </h5>
+                    <div class="col-12 border rounded p-4 shadow"
+                        {{post.mensagem}}>
+                        <hr>
+                        <img src="{{ url_for('static', filename='data/post/{}'.format(post.imagem))}}" style="max-width:300px">
+                    </div>
+            </div>
+
+            </div class= "col-12">
+                <form action="" method="POST" class="mt-4 p-4 rounde border shadow">
+                    {{ form.csrf_token }}
+                            
+                    <div class="mb-3">
+                        
+                        {{ form.mensagem.label(class_="form-label") }}
+                        {{ form.mensagem(class_="form-control") }}
+                    </div>
+                
+                    <div class="mb-3">
+                        {{ form.btnSubmit(class_="btn btn-primary col-12 mt-3") }}
+                    </div>
+                </form>
+        </div> 
+                
+
+    </div>
+
+
+ 
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        {% include 'nav.html' %}
+
+<div class="row mt-4">
+    <h3>Lista de Posts</h3>
+
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Post</th>
+                    <th>Usuário</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for linha in posts %}
+                <tr>
+                    <td>{{ linha.user.nome }}</td>
+                    <td>
+                        <a href="{{ url_for('Post_detail', id=linha.id) }}">Detalhes</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+{% endblock %}

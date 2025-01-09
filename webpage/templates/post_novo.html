@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div>
+            <h3>Novo Post</h3>
+        </div>  
+        <form action="" method="POST" class="mt-4 p-4 rounde border shadow" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+                    
+            <div class="mb-3">
+                {{ form.mensagem.label(class_="form-label") }}
+                {{ form.mensagem(class_="form-control") }}
+                <hr>
+                {{ form.imagem.label(class_="form-label") }}
+                {{ form.imagem(class_="form-control") }}
+            </div>
+           
+            <div class="mb-3">
+                {{ form.btnSubmit(class_="btn btn-primary col-12 mt-3") }}
+            </div>
+        </form>
+    </div>
+
+
+ 
+{% endblock %}
+

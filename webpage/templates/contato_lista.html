@@ -27,6 +27,8 @@
                             <th>Email</th>
                             <th>Respondido</th>
                             <th></th>
+                            <th></th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +36,7 @@
                         <tr>
                             <td>{{ contato.nome }}</td>
                             <td>{{ contato.email }}</td>
+                            
                             <td>
                                 {% if contato.respondido == 0 %}
                                     Não
@@ -42,6 +45,7 @@
                                 {% endif %}
                             </td>
                             <td><a href="{{url_for('contatoDetail', id=contato.id)}}"> Link</td>
+                           
                         </tr>
                         {% endfor %}
                     </tbody>
