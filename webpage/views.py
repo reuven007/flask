@@ -33,15 +33,6 @@ def cadastro():
         if user:  # Verifica se o usuário foi criado corretamente
             login_user(user, remember=True)
 
-            # Enviar e-mail de boas-vindas
-            msg = Message('Bem-vindo à Plataforma ReDeveloper', recipients=[user.email])
-            msg.body = 'Olá, seja bem-vindo à plataforma ReDeveloper! Estamos felizes em tê-lo conosco.'
-            try:
-                mail.send(msg)
-                flash('Cadastro realizado com sucesso. Um e-mail de boas-vindas foi enviado!', 'success')
-            except Exception as e:
-                flash(f'Ocorreu um erro ao enviar o e-mail: {str(e)}', 'error')
-
             return redirect(url_for('home'))
         else:
             flash('Erro ao criar o usuário. Por favor, tente novamente.', 'error')    
